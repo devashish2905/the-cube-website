@@ -610,72 +610,6 @@ h3 {
   min-height: 420px;
   perspective: 1200px;
 }
-.hero-photo-card {
-  position: absolute;
-  width: min(58%, 240px);
-  right: 4%;
-  top: 6%;
-  border-radius: 1.35rem;
-  overflow: hidden;
-  box-shadow: var(--shadow-md), 0 0 0 1px rgba(255,255,255,0.55);
-  transform: rotate(4deg);
-  z-index: 0;
-  opacity: 0.92;
-}
-.hero-photo-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 6 / 7;
-  object-fit: cover;
-  display: block;
-  filter: saturate(0.92) contrast(1.02);
-}
-.hero-photo-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(160deg, rgba(0, 109, 109, 0.12), transparent 45%),
-    linear-gradient(0deg, rgba(15, 29, 30, 0.18), transparent 40%);
-  pointer-events: none;
-}
-.hero-float-chip {
-  position: absolute;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(15, 29, 30, 0.06);
-  box-shadow: var(--shadow-sm);
-  color: var(--ink-soft);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  backdrop-filter: blur(10px);
-  white-space: nowrap;
-}
-.hero-float-chip-a {
-  left: 2%;
-  top: 22%;
-}
-.hero-float-chip-b {
-  right: 0;
-  bottom: 18%;
-}
-.chip-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 109, 109, 0.15);
-}
-.chip-dot-accent {
-  background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(84, 184, 91, 0.18);
-}
 .phone-frame {
   position: relative;
   z-index: 1;
@@ -689,20 +623,8 @@ h3 {
 @media (max-width: 959px) {
   .phone-frame { transform: none; }
   .hero-visual { min-height: 0; }
-  .hero-photo-card {
-    width: min(46%, 170px);
-    right: 0;
-    top: -2%;
-    opacity: 0.88;
-  }
-  .hero-float-chip-a { left: 0; top: 8%; }
-  .hero-float-chip-b { right: 0; bottom: 8%; }
   .hero-ring-a { opacity: 0.45; }
   .hero-nodes { display: none; }
-}
-@media (max-width: 560px) {
-  .hero-photo-card { display: none; }
-  .hero-float-chip-b { display: none; }
 }
 .phone-notch {
   width: 36%;
