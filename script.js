@@ -1,5 +1,5 @@
 /**
- * The Cube marketing site — light polish only.
+ * The Cube — AI medical companion marketing site.
  */
 (function () {
   "use strict";

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Cube — Family Medical Vault. Organize medical records, reminders, and family health documents in one calm, private place. Not medical advice." />
-  <meta name="theme-color" content="#0d7377" />
-  <title>The Cube — Family Medical Vault</title>
+  <meta name="description" content="The Cube — your AI medical companion. Organize family records, reminders, and insights in one calm, private place. Not medical advice." />
+  <meta name="theme-color" content="#006D6D" />
+  <title>The Cube — your AI medical companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
         <img src="assets/the-cube-logo-transparent.png" alt="" width="40" height="40" class="brand-logo" />
         <span class="brand-text">
           <span class="brand-name">The Cube</span>
-          <span class="brand-sub">MediVault</span>
+          <span class="brand-sub">AI medical companion</span>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -45,14 +45,15 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Family Medical Vault</p>
+          <p class="eyebrow">Your AI medical companion</p>
           <h1>
-            Your family’s medical records,<br />
-            <em>organized in one calm place.</em>
+            Family health, organized —<br />
+            <em>with a companion that helps you keep up.</em>
           </h1>
           <p class="lead">
-            The Cube helps families in India store documents, set health reminders,
-            and keep every member’s records ready — without pretending to be a doctor.
+            The Cube brings records, reminders, and gentle AI summaries into one
+            private place for your household — so you’re ready when care calls.
+            Not a doctor. Not medical advice.
           </p>
           <div class="hero-actions">
             <a href="#cta" class="btn btn-primary btn-lg">Explore The Cube</a>
@@ -60,53 +61,96 @@
           </div>
           <ul class="hero-trust" aria-label="Highlights">
             <li>Private vault for reports &amp; prescriptions</li>
-            <li>Multiple family profiles</li>
-            <li>Reminders that stay with your records</li>
+            <li>AI companion for chat &amp; summaries</li>
+            <li>Family profiles, meds &amp; insights in one app</li>
           </ul>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
-              <div class="mock-top">
-                <img src="assets/the-cube-logo-transparent.png" alt="" width="28" height="28" />
-                <span>Home</span>
+              <div class="mock-appbar">
+                <span class="mock-greeting">Hi, Dev</span>
               </div>
-              <div class="mock-card mock-welcome">
-                <span class="mock-label">Today</span>
-                <strong>Health at a glance</strong>
-                <p>Records, meds &amp; family — one vault.</p>
-              </div>
-              <div class="mock-row">
-                <div class="mock-chip">Records</div>
-                <div class="mock-chip">Meds</div>
-                <div class="mock-chip">Family</div>
-              </div>
-              <div class="mock-card">
-                <div class="mock-doc">
-                  <span class="mock-icon">📄</span>
-                  <div>
-                    <strong>Lab report — lipid panel</strong>
-                    <small>Priya · uploaded recently</small>
+
+              <div class="mock-stats">
+                <div class="mock-stat">
+                  <div class="mock-stat-label">
+                    <svg class="mock-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Documents
                   </div>
+                  <div class="mock-stat-value">12</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat-label">
+                    <svg class="mock-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    People
+                  </div>
+                  <div class="mock-stat-value">4</div>
                 </div>
               </div>
-              <div class="mock-card">
-                <div class="mock-doc">
-                  <span class="mock-icon">💊</span>
-                  <div>
-                    <strong>Evening reminder</strong>
-                    <small>Metformin · 8:00 PM</small>
-                  </div>
+
+              <div class="mock-actions">
+                <button type="button" class="mock-btn mock-btn-filled" tabindex="-1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Upload record
+                </button>
+                <button type="button" class="mock-btn mock-btn-outline" tabindex="-1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                  Add family
+                </button>
+              </div>
+
+              <div class="mock-section-head">
+                <span>Recent records</span>
+                <span class="mock-view-all">View all</span>
+              </div>
+
+              <div class="mock-doc-tile">
+                <div class="mock-doc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="mock-doc-body">
+                  <strong>Lab report — lipid panel</strong>
+                  <small>Priya · PDF</small>
                 </div>
               </div>
-              <div class="mock-tabs">
-                <span class="on">Home</span>
-                <span>Records</span>
-                <span>Insights</span>
-                <span>Meds</span>
-                <span>Family</span>
+              <div class="mock-doc-tile">
+                <div class="mock-doc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="mock-doc-body">
+                  <strong>Prescription — cardiology</strong>
+                  <small>Dad · PDF</small>
+                </div>
               </div>
+
+              <nav class="mock-tabs" aria-hidden="true">
+                <span class="on">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                  Home
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Records
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                  Insights
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 3h6v2H9z"/><path d="M8 5h8v3a4 4 0 0 1-8 0V5z"/><path d="M10 12v9"/><path d="M14 12v9"/><path d="M8 21h8"/></svg>
+                  Meds
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Family
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Profile
+                </span>
+              </nav>
             </div>
           </div>
         </div>
@@ -117,11 +161,11 @@
     <section class="section" id="purpose">
       <div class="container narrow">
         <p class="eyebrow">Why The Cube</p>
-        <h2>Built for real family health paperwork — not clinical claims.</h2>
+        <h2>Built for real family health paperwork — with an AI companion beside you.</h2>
         <p class="section-lead">
           Clinics hand you PDFs. Pharmacies text doses. Parents juggle kids’ vaccines and grandparents’ prescriptions.
-          The Cube is a <strong>family medical vault</strong>: upload, search, remind, and share context within your household —
-          so the right document is there when you need it.
+          The Cube is your <strong>AI medical companion</strong>: upload, search, remind, and ask for plain-language summaries —
+          so the right context is there when you need it.
         </p>
         <div class="purpose-grid">
           <article class="purpose-card">
@@ -133,8 +177,8 @@
             <p>Medication and health reminders tied to the people and records you already keep.</p>
           </article>
           <article class="purpose-card">
-            <h3>Prepare</h3>
-            <p>An Emergency Card with allergies, conditions, and contacts you enter — for when seconds matter.</p>
+            <h3>Ask</h3>
+            <p>Chat with your companion for gentle summaries of what’s in your vault — always verify with professionals.</p>
           </article>
         </div>
       </div>
@@ -145,10 +189,10 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Features</p>
-          <h2>Everything a family vault needs — clearly labeled.</h2>
+          <h2>Everything your companion needs — clearly labeled.</h2>
           <p class="section-lead">
             App areas: Home · Records · Insights · Meds · Family · Profile.
-            Insights and scores are informational only.
+            Insights and AI summaries are informational only.
           </p>
         </div>
         <div class="feature-grid">
@@ -189,10 +233,10 @@
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <h3>ABHA / ABDM ready</h3>
-            <p>Optional India ABHA linking is available or coming where partner compliance allows — we don’t overclaim live OAuth until it’s production-ready.</p>
+            <h3>AI companion &amp; chat</h3>
+            <p>Ask about what’s in your vault and get plain-language summaries. Informational only — never a diagnosis or treatment plan.</p>
           </article>
         </div>
       </div>
@@ -203,7 +247,7 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">How it works</p>
-          <h2>From paper pile to private vault — in three steps.</h2>
+          <h2>From paper pile to private companion — in three steps.</h2>
         </div>
         <ol class="steps">
           <li class="step">
@@ -217,14 +261,14 @@
             <span class="step-num">02</span>
             <div>
               <h3>Add family profiles</h3>
-              <p>Invite the household into one vault — parents, kids, elders — each with their own records space.</p>
+              <p>Invite the household into one place — parents, kids, elders — each with their own records space.</p>
             </div>
           </li>
           <li class="step">
             <span class="step-num">03</span>
             <div>
-              <h3>Upload, remind, review</h3>
-              <p>Drop in documents, set Meds reminders, glance at Insights, and keep an Emergency Card updated for peace of mind.</p>
+              <h3>Upload, remind, ask</h3>
+              <p>Drop in documents, set Meds reminders, glance at Insights, and chat with your companion when you need a quick summary.</p>
             </div>
           </li>
         </ol>
@@ -239,7 +283,7 @@
           <h2>Designed for Indian families juggling care across generations.</h2>
           <p class="section-lead">
             Whether you’re coordinating a parent’s cardiac follow-ups, a child’s vaccination card,
-            or your own annual labs — The Cube keeps the paperwork in one trustworthy place.
+            or your own annual labs — The Cube keeps the paperwork close, with an AI companion that helps you stay oriented.
           </p>
           <ul class="check-list">
             <li>Multi-member households sharing one account</li>
@@ -249,12 +293,13 @@
         </div>
         <div class="family-panel">
           <blockquote>
-            <p>“One vault for the whole family — records when the doctor asks, reminders when the day gets busy.”</p>
+            <p>“One companion for the whole family — records when the doctor asks, reminders when the day gets busy.”</p>
             <footer>— Product intent for The Cube</footer>
           </blockquote>
           <div class="pill-row">
             <span class="pill">India-first</span>
             <span class="pill">Family profiles</span>
+            <span class="pill">AI companion</span>
             <span class="pill">Calm UX</span>
           </div>
         </div>
@@ -268,7 +313,8 @@
           <p class="eyebrow">Important</p>
           <h2>Medical disclaimer</h2>
           <p>
-            The Cube helps you organize family medical records and related reminders.
+            The Cube helps you organize family medical records and related reminders,
+            and offers an AI companion for informational summaries.
             It does <strong>not</strong> provide medical advice, diagnosis, or treatment.
             Insights, health scores, AI summaries, and extracted data may be incomplete or inaccurate.
             Always consult a qualified healthcare professional.
@@ -286,8 +332,8 @@
     <section class="section cta-section" id="cta">
       <div class="container cta-inner">
         <img src="assets/the-cube-logo-transparent.png" alt="" width="56" height="56" class="cta-logo" />
-        <h2>Keep your family’s health documents ready.</h2>
-        <p>The Cube — Family Medical Vault. Calm organization for the records that matter.</p>
+        <h2>Your AI medical companion, ready for the family.</h2>
+        <p>The Cube — calm organization for the records that matter, with a companion that helps you keep up.</p>
         <div class="hero-actions cta-actions">
           <a href="#top" class="btn btn-primary btn-lg">Back to top</a>
           <a href="#disclaimer" class="btn btn-ghost-light btn-lg">Read disclaimer</a>
@@ -303,7 +349,7 @@
         <img src="assets/the-cube-logo-transparent.png" alt="" width="32" height="32" />
         <div>
           <strong>The Cube</strong>
-          <span>Family Medical Vault / MediVault</span>
+          <span>your AI medical companion</span>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">

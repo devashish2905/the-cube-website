@@ -1,27 +1,37 @@
-/* The Cube — Family Medical Vault marketing site
-   Teal / emerald + soft neutrals. Mobile-first, premium. */
+/* The Cube — AI medical companion marketing site
+   Aligned with Flutter AppColors (primary #006D6D, accent #54B85B). */
 
 :root {
-  --teal-900: #0a4f52;
-  --teal-800: #0d5c60;
-  --teal-700: #0d7377;
-  --teal-600: #14919b;
+  --primary: #006D6D;
+  --primary-deep: #004f4f;
+  --primary-mid: #0a7a7a;
+  --accent: #54B85B;
+  --accent-soft: #5dd879;
+  --app-bg: #DFDEDB;
+  --app-fg: #0F1D1E;
+  --app-muted: #4C5C5B;
+  --app-border: #D2D1CE;
+  --app-card: #ffffff;
+  --teal-900: #003833;
+  --teal-800: #004f4f;
+  --teal-700: #006D6D;
+  --teal-600: #0a7a7a;
   --teal-500: #2a9d8f;
-  --emerald-500: #34c759;
+  --emerald-500: #54B85B;
   --emerald-400: #5dd879;
-  --ink: #14262a;
+  --ink: #0F1D1E;
   --ink-soft: #3a4f54;
-  --muted: #5c7176;
-  --line: rgba(20, 38, 42, 0.08);
-  --line-strong: rgba(20, 38, 42, 0.14);
+  --muted: #4C5C5B;
+  --line: rgba(15, 29, 30, 0.08);
+  --line-strong: rgba(15, 29, 30, 0.14);
   --surface: #ffffff;
-  --surface-soft: #f4f7f6;
-  --surface-warm: #eef3f1;
-  --bg: #f7f9f8;
-  --bg-deep: #0c3d40;
-  --shadow-sm: 0 1px 2px rgba(12, 61, 64, 0.04), 0 4px 12px rgba(12, 61, 64, 0.04);
-  --shadow-md: 0 8px 30px rgba(12, 61, 64, 0.08), 0 2px 8px rgba(12, 61, 64, 0.04);
-  --shadow-lg: 0 24px 60px rgba(12, 61, 64, 0.14), 0 8px 20px rgba(12, 61, 64, 0.06);
+  --surface-soft: #f3f4f2;
+  --surface-warm: #ebeae7;
+  --bg: #f7f8f6;
+  --bg-deep: #003833;
+  --shadow-sm: 0 1px 2px rgba(0, 109, 109, 0.04), 0 4px 12px rgba(0, 109, 109, 0.04);
+  --shadow-md: 0 8px 30px rgba(0, 109, 109, 0.08), 0 2px 8px rgba(0, 109, 109, 0.04);
+  --shadow-lg: 0 24px 60px rgba(0, 109, 109, 0.14), 0 8px 20px rgba(0, 109, 109, 0.06);
   --radius: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
@@ -95,7 +105,7 @@ strong { font-weight: 600; }
   top: 0;
   z-index: 50;
   height: var(--header-h);
-  background: rgba(247, 249, 248, 0.82);
+  background: rgba(247, 248, 246, 0.82);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid transparent;
@@ -137,11 +147,10 @@ strong { font-weight: 600; }
   letter-spacing: -0.02em;
 }
 .brand-sub {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
   color: var(--muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .nav-toggle {
@@ -254,13 +263,13 @@ strong { font-weight: 600; }
 .btn-sm { padding: 0.5rem 1rem; font-size: 0.8125rem; }
 .btn-lg { padding: 0.9rem 1.6rem; font-size: 1rem; }
 .btn-primary {
-  background: linear-gradient(165deg, var(--teal-600), var(--teal-800));
+  background: linear-gradient(165deg, var(--primary-mid), var(--primary));
   color: #fff !important;
-  box-shadow: 0 4px 16px rgba(13, 115, 119, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 109, 109, 0.35);
 }
 .btn-primary:hover {
-  background: linear-gradient(165deg, var(--teal-500), var(--teal-700));
-  box-shadow: 0 6px 22px rgba(13, 115, 119, 0.4);
+  background: linear-gradient(165deg, var(--teal-500), var(--primary));
+  box-shadow: 0 6px 22px rgba(0, 109, 109, 0.4);
   color: #fff !important;
 }
 .btn-ghost {
@@ -270,7 +279,7 @@ strong { font-weight: 600; }
 }
 .btn-ghost:hover {
   background: var(--surface);
-  border-color: var(--teal-600);
+  border-color: var(--primary);
   color: var(--teal-900) !important;
 }
 .btn-ghost-light {
@@ -291,7 +300,7 @@ strong { font-weight: 600; }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--teal-600);
+  color: var(--primary);
 }
 h1, h2, h3 {
   margin: 0 0 0.75rem;
@@ -307,7 +316,7 @@ h1 em {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--teal-700);
+  color: var(--primary);
 }
 h2 {
   font-size: clamp(1.65rem, 3.5vw, 2.35rem);
@@ -349,9 +358,9 @@ h3 {
   inset: -20% -10% auto;
   height: 70%;
   background:
-    radial-gradient(ellipse 50% 60% at 20% 30%, rgba(42, 157, 143, 0.18), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(52, 199, 89, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(13, 115, 119, 0.08), transparent 50%);
+    radial-gradient(ellipse 50% 60% at 20% 30%, rgba(0, 109, 109, 0.16), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(84, 184, 91, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 50% 80%, rgba(0, 109, 109, 0.07), transparent 50%);
   pointer-events: none;
 }
 .hero-grid {
@@ -396,11 +405,11 @@ h3 {
   margin-top: 0.15rem;
   border-radius: 50%;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7.25' stroke='%2314919b' stroke-width='1.5'/%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.5-4.5' stroke='%230d7377' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7.25' stroke='%23006D6D' stroke-width='1.5'/%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.5-4.5' stroke='%23006D6D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     center / contain no-repeat;
 }
 
-/* Phone mock */
+/* Phone mock — mirrors Flutter HomeScreen + AppShell */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -410,7 +419,7 @@ h3 {
   width: min(100%, 300px);
   background: linear-gradient(160deg, #1a2e32, #0c2024);
   border-radius: 2.25rem;
-  padding: 0.65rem;
+  padding: 0.55rem;
   box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,0.08) inset;
   transform: rotateY(-6deg) rotateX(2deg);
 }
@@ -419,89 +428,195 @@ h3 {
 }
 .phone-notch {
   width: 36%;
-  height: 1.1rem;
-  margin: 0.35rem auto 0.6rem;
+  height: 1rem;
+  margin: 0.3rem auto 0.45rem;
   background: #0a1416;
   border-radius: 999px;
 }
 .phone-screen {
-  background: linear-gradient(180deg, #e8f0ee 0%, #f5f8f7 40%, #fff 100%);
-  border-radius: 1.65rem;
-  padding: 0.85rem 0.9rem 1rem;
-  min-height: 420px;
+  background: var(--app-bg);
+  border-radius: 1.75rem;
+  padding: 0.55rem 0.65rem 0;
+  min-height: 460px;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.55rem;
+  overflow: hidden;
 }
-.mock-top {
+
+.mock-appbar {
+  padding: 0.35rem 0.25rem 0.15rem;
+}
+.mock-greeting {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--app-fg);
+}
+
+.mock-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.mock-stat {
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  border-radius: 0.9rem;
+  padding: 0.7rem 0.75rem;
+}
+.mock-stat-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--app-muted);
+  margin-bottom: 0.35rem;
+}
+.mock-stat-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+.mock-stat-value {
+  font-size: 1.35rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--ink);
-}
-.mock-top img { width: 28px; height: 28px; }
-.mock-card {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 0.85rem 1rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(13, 115, 119, 0.06);
-}
-.mock-welcome strong { display: block; font-size: 0.95rem; margin: 0.15rem 0; }
-.mock-welcome p { margin: 0; font-size: 0.78rem; color: var(--muted); }
-.mock-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--teal-600);
-}
-.mock-row {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.mock-chip {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(13, 115, 119, 0.1);
-  color: var(--teal-800);
-}
-.mock-doc {
-  display: flex;
-  gap: 0.65rem;
-  align-items: flex-start;
-}
-.mock-icon {
-  font-size: 1.15rem;
+  color: var(--app-fg);
+  font-variant-numeric: tabular-nums;
   line-height: 1;
 }
-.mock-doc strong {
-  display: block;
-  font-size: 0.8rem;
+
+.mock-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.mock-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  font-family: inherit;
+  font-size: 0.62rem;
   font-weight: 600;
+  padding: 0.65rem 0.55rem;
+  border-radius: 0.85rem;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+  line-height: 1.2;
 }
-.mock-doc small {
-  font-size: 0.7rem;
-  color: var(--muted);
+.mock-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
 }
+.mock-btn-filled {
+  background: var(--primary);
+  color: #fcfcfc;
+}
+.mock-btn-outline {
+  background: transparent;
+  color: var(--app-fg);
+  border: 1px solid var(--app-border);
+}
+
+.mock-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.15rem 0.1rem 0;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--app-muted);
+}
+.mock-view-all {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.65rem;
+}
+
+.mock-doc-tile {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  border-radius: 0.85rem;
+  padding: 0.6rem 0.7rem;
+}
+.mock-doc-icon {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.55rem;
+  background: rgba(0, 109, 109, 0.1);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.mock-doc-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+.mock-doc-body {
+  min-width: 0;
+}
+.mock-doc-body strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--app-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mock-doc-body small {
+  font-size: 0.62rem;
+  color: var(--app-muted);
+}
+
 .mock-tabs {
   margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  padding: 0.4rem 0.15rem 0.55rem;
+  background: rgba(223, 222, 219, 0.95);
+  border-top: 1px solid var(--app-border);
+  font-size: 0.48rem;
+  font-weight: 500;
+  color: var(--app-muted);
+  text-align: center;
+}
+.mock-tabs span {
   display: flex;
-  justify-content: space-between;
-  gap: 0.2rem;
-  padding: 0.55rem 0.4rem 0.2rem;
-  font-size: 0.58rem;
-  font-weight: 600;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.2rem 0;
+}
+.mock-tabs svg {
+  width: 1rem;
+  height: 1rem;
 }
 .mock-tabs .on {
-  color: var(--teal-700);
+  color: var(--primary);
+  font-weight: 600;
+  position: relative;
+}
+.mock-tabs .on::before {
+  content: "";
+  position: absolute;
+  top: -0.05rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.6rem;
+  height: 1.35rem;
+  background: rgba(0, 109, 109, 0.12);
+  border-radius: 999px;
+  z-index: -1;
 }
 
 /* Purpose */
@@ -555,7 +670,7 @@ h3 {
   transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease);
 }
 .feature-card:hover {
-  border-color: rgba(13, 115, 119, 0.25);
+  border-color: rgba(0, 109, 109, 0.25);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
@@ -565,8 +680,8 @@ h3 {
   display: grid;
   place-items: center;
   border-radius: 0.85rem;
-  background: linear-gradient(145deg, rgba(42, 157, 143, 0.15), rgba(13, 115, 119, 0.08));
-  color: var(--teal-700);
+  background: linear-gradient(145deg, rgba(0, 109, 109, 0.14), rgba(84, 184, 91, 0.1));
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 .feature-icon svg { width: 1.35rem; height: 1.35rem; }
@@ -607,13 +722,13 @@ h3 {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--teal-600), var(--emerald-400));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   opacity: 0.85;
 }
 .step-num {
   font-family: var(--serif);
   font-size: 2rem;
-  color: var(--teal-600);
+  color: var(--primary);
   line-height: 1;
   opacity: 0.9;
 }
@@ -657,13 +772,13 @@ h3 {
   margin-top: 0.1rem;
   border-radius: 50%;
   background:
-    linear-gradient(135deg, var(--teal-600), var(--emerald-500))
+    linear-gradient(135deg, var(--primary), var(--accent))
     center / cover no-repeat;
   box-shadow: inset 0 0 0 3px #fff;
-  outline: 1.5px solid rgba(13, 115, 119, 0.25);
+  outline: 1.5px solid rgba(0, 109, 109, 0.25);
 }
 .family-panel {
-  background: linear-gradient(155deg, var(--teal-800), var(--bg-deep) 55%, #0a3538);
+  background: linear-gradient(155deg, var(--primary), var(--bg-deep) 55%, #002a28);
   color: #e8f4f3;
   border-radius: var(--radius-xl);
   padding: 2rem 1.75rem;
@@ -711,8 +826,8 @@ h3 {
 }
 .disclaimer-card {
   background: #fff;
-  border: 1px solid rgba(13, 115, 119, 0.18);
-  border-left: 4px solid var(--teal-600);
+  border: 1px solid rgba(0, 109, 109, 0.18);
+  border-left: 4px solid var(--primary);
   border-radius: var(--radius-lg);
   padding: 2rem 1.75rem;
   box-shadow: var(--shadow-sm);
@@ -732,9 +847,9 @@ h3 {
 /* CTA */
 .cta-section {
   background:
-    radial-gradient(ellipse 60% 80% at 10% 100%, rgba(52, 199, 89, 0.15), transparent 50%),
-    radial-gradient(ellipse 50% 70% at 90% 0%, rgba(42, 157, 143, 0.2), transparent 50%),
-    linear-gradient(165deg, var(--teal-800), var(--bg-deep));
+    radial-gradient(ellipse 60% 80% at 10% 100%, rgba(84, 184, 91, 0.15), transparent 50%),
+    radial-gradient(ellipse 50% 70% at 90% 0%, rgba(0, 109, 109, 0.22), transparent 50%),
+    linear-gradient(165deg, var(--primary), var(--bg-deep));
   color: #eef7f6;
   text-align: center;
   padding: clamp(4rem, 9vw, 6.5rem) 0;
@@ -769,7 +884,7 @@ h3 {
 
 /* Footer */
 .site-footer {
-  background: #0a2e30;
+  background: #002a28;
   color: rgba(255,255,255,0.65);
   padding: 2.5rem 0 2rem;
   font-size: 0.875rem;

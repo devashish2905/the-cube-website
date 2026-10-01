@@ -1,6 +1,6 @@
-# The Cube — Family Medical Vault (marketing site)
+# The Cube — your AI medical companion (marketing site)
 
-Static marketing landing page for **The Cube (MediVault)**.
+Static marketing landing page for **The Cube**.
 
 ## Preview locally
 
@@ -30,12 +30,14 @@ npx --yes serve -l 8080 /workspace/cube-website
 | Path | Role |
 |------|------|
 | `index.html` | Single-page marketing site |
-| `styles.css` | Mobile-first premium styles |
+| `styles.css` | Mobile-first premium styles (AppColors-aligned) |
 | `script.js` | Nav toggle, sticky header, smooth scroll |
 | `assets/the-cube-logo-transparent.png` | Product logo |
 
 No build step. Google Fonts CDN is used for DM Sans + Instrument Serif.
 
+Live: https://devashish2905.github.io/the-cube-website/
+
 ## Tone
 
-Healthcare-adjacent, calm, trustworthy. Product organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
+Healthcare-adjacent, calm, trustworthy. Product is an **AI medical companion** that organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
