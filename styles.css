@@ -820,10 +820,6 @@ h3 {
 }
 
 /* Purpose */
-.purpose-intro {
-  max-width: var(--narrow);
-  margin-inline: auto;
-}
 .purpose-grid {
   display: grid;
   gap: 1rem;
