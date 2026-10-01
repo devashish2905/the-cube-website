@@ -1,5 +1,5 @@
 /**
- * The Cube — AI medical companion marketing site.
+ * The Cube — AI Health Companion marketing site.
  */
 (function () {
   "use strict";

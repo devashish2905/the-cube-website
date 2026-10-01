@@ -1,4 +1,4 @@
-/* The Cube — AI medical companion marketing site
+/* The Cube — AI Health Companion marketing site
    Aligned with Flutter AppColors (primary #006D6D, accent #54B85B). */
 
 :root {
@@ -39,6 +39,7 @@
   --serif: "Instrument Serif", Georgia, serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 4.25rem;
+  --brand-logo-size: 56px;
   --max: 1120px;
   --narrow: 720px;
 }
@@ -149,8 +150,8 @@ strong { font-weight: 600; }
   color: inherit;
 }
 .brand-logo {
-  width: 40px;
-  height: 40px;
+  width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
   object-fit: contain;
 }
 .brand-text {
@@ -1013,8 +1014,8 @@ h3 {
   gap: 0.75rem;
 }
 .footer-brand img {
-  width: 32px;
-  height: 32px;
+  width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
   opacity: 0.95;
 }
 .footer-brand strong {
@@ -1061,6 +1062,7 @@ h3 {
 
 /* Demos / See The Cube */
 .demo-card {
+  width: 100%;
   margin: 0 0 1.5rem;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1077,10 +1079,6 @@ h3 {
 .demo-featured {
   box-shadow: var(--shadow-md);
   border-color: rgba(0, 109, 109, 0.18);
-}
-.demo-secondary {
-  max-width: 720px;
-  margin-inline: auto;
 }
 .demo-player {
   background: #0a1416;

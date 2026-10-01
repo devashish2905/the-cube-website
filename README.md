@@ -1,4 +1,4 @@
-# The Cube — your AI medical companion (marketing site)
+# The Cube — your AI Health Companion (marketing site)
 
 Static marketing landing page for **The Cube**.
 
@@ -42,4 +42,4 @@ Live: https://devashish2905.github.io/the-cube-website/
 
 ## Tone
 
-Healthcare-adjacent, calm, trustworthy. Product is an **AI medical companion** that organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
+Healthcare-adjacent, calm, trustworthy. Product is an **AI Health Companion** that organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
