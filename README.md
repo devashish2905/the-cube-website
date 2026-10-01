@@ -33,6 +33,8 @@ npx --yes serve -l 8080 /workspace/cube-website
 | `styles.css` | Mobile-first premium styles (AppColors-aligned) |
 | `script.js` | Nav toggle, sticky header, smooth scroll |
 | `assets/the-cube-logo-transparent.png` | Product logo |
+| `assets/videos/demo-1.mp4` | Homepage demo video 1 (720p) |
+| `assets/videos/demo-2.mp4` | Homepage demo video 2 (720p) |
 
 No build step. Google Fonts CDN is used for DM Sans + Instrument Serif.
 
