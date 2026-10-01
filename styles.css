@@ -387,6 +387,9 @@ h3 {
   gap: 3rem;
   align-items: center;
 }
+.hero-copy {
+  max-width: 42rem;
+}
 .hero-grid > *,
 .purpose-grid > *,
 .feature-grid > *,
