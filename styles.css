@@ -947,15 +947,8 @@ h3 {
 }
 
 /* Demos / See The Cube */
-.demo-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-@media (min-width: 800px) {
-  .demo-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
-}
 .demo-card {
-  margin: 0;
+  margin: 0 0 1.5rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -963,9 +956,18 @@ h3 {
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.25s, transform 0.25s var(--ease);
 }
+.demo-card:last-child { margin-bottom: 0; }
 .demo-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+}
+.demo-featured {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 109, 109, 0.18);
+}
+.demo-secondary {
+  max-width: 720px;
+  margin-inline: auto;
 }
 .demo-player {
   background: #0a1416;
@@ -979,14 +981,21 @@ h3 {
   background: #0a1416;
 }
 .demo-card figcaption {
-  padding: 1.15rem 1.25rem 1.35rem;
+  padding: 1.25rem 1.35rem 1.5rem;
+}
+.demo-featured figcaption {
+  padding: 1.4rem 1.5rem 1.65rem;
 }
 .demo-card figcaption h3 {
-  margin-bottom: 0.35rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+.demo-featured figcaption h3 {
+  font-size: 1.25rem;
 }
 .demo-card figcaption p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--ink-soft);
+  max-width: 40em;
 }
