@@ -48,6 +48,13 @@
     });
   }
 
+  // Keep placeholder store badges inert until the apps are available.
+  document.querySelectorAll('a[aria-disabled="true"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  });
+
   // Smooth scroll for same-page anchors (respects reduced motion via CSS)
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
