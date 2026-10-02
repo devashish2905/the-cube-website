@@ -8,6 +8,7 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
   var yearEl = document.getElementById("year");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
@@ -70,4 +71,42 @@
       }
     });
   });
+
+  // Soft page-load entrance (hero fade/slide + pattern)
+  function markLoaded() {
+    document.body.classList.add("is-loaded");
+  }
+  if (reduceMotion) {
+    markLoaded();
+  } else if (document.readyState === "complete") {
+    requestAnimationFrame(markLoaded);
+  } else {
+    window.addEventListener("load", function () {
+      requestAnimationFrame(markLoaded);
+    });
+  }
+
+  // Staggered scroll reveals for cards / sections
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length) {
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      reveals.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+    } else {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          });
+        },
+        { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      );
+      reveals.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+  }
 })();
