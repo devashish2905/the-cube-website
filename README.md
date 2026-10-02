@@ -38,7 +38,8 @@ npx --yes serve -l 8080 /workspace/cube-website
 
 No build step. Google Fonts CDN is used for DM Sans + Instrument Serif.
 
-Live: https://devashish2905.github.io/the-cube-website/
+Live (github.io): https://devashish2905.github.io/the-cube-website/
+Custom domain (after GoDaddy A/www DNS): https://thecubelife.in — see [DEPLOY.md](DEPLOY.md).
 
 ## Tone
 
