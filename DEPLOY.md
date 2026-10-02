@@ -92,4 +92,4 @@ Edit files in this repo, push to `main`. Pages rebuilds automatically. No build 
 
 ## Ownership
 
-Website deploy stream: Grok Bot (primary), with Learning owning MediVault/Cube product. DNS changes on GoDaddy need Dev (or a signed-in GoDaddy session).
+Website deploy stream: Grok Bot (primary), with Learning owning The Cube product. DNS changes on GoDaddy need Dev (or a signed-in GoDaddy session).

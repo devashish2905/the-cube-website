@@ -1,4 +1,4 @@
-# The Cube — your AI Health Companion (marketing site)
+# The Cube — your AI companion (marketing site)
 
 Static marketing landing page for **The Cube**.
 
@@ -43,4 +43,4 @@ Custom domain (after GoDaddy A/www DNS): https://thecubelife.in — see [DEPLOY.
 
 ## Tone
 
-Healthcare-adjacent, calm, trustworthy. Product is an **AI Health Companion** that organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
+Healthcare-adjacent, calm, trustworthy. Product is **your AI companion** that organizes family medical records and reminders — **not** medical advice, diagnosis, or treatment. See the on-page disclaimer.
