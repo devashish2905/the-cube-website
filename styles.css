@@ -77,6 +77,7 @@ html {
     opacity: 1 !important;
     transform: none !important;
   }
+
 }
 
 body {
@@ -657,14 +658,10 @@ h3 {
 }
 
 /* Soft floating theme objects around the phone mock */
-.hero-visual {
-  /* room for floaters beside the phone */
-  padding: 2.5rem 4.5rem !important;
-}
 .hero-floaters {
   position: absolute;
   inset: 0;
-  z-index: 4; /* above phone */
+  z-index: 5;
   pointer-events: none;
   overflow: visible;
 }
@@ -673,145 +670,118 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.65rem 1rem 0.65rem 0.55rem;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1.5px solid rgba(13, 148, 136, 0.35);
-  box-shadow:
-    0 14px 32px rgba(15, 23, 42, 0.18),
-    0 0 0 4px rgba(13, 148, 136, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  padding: 0.45rem 0.9rem 0.45rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
   color: var(--teal-800);
-  opacity: 0.92;
-  will-change: transform, opacity;
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.22);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  opacity: 1 !important;
+  will-change: transform;
   pointer-events: none;
-}
-body:not(.is-loaded) .hero-floater {
-  opacity: 0;
-}
-body.is-loaded .hero-floater {
-  opacity: 1;
-  transition: opacity 0.7s var(--ease);
 }
 .hero-floater-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 1.65rem;
+  height: 1.65rem;
   border-radius: 50%;
   background: #0d9488;
   color: #fff;
   flex-shrink: 0;
 }
 .hero-floater-icon svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 0.95rem;
+  height: 0.95rem;
 }
 .hero-floater-icon-rupee {
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.hero-floater-label {
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--ink);
-  white-space: nowrap;
   line-height: 1;
 }
+.hero-floater-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--teal-800);
+  white-space: nowrap;
+  line-height: 1.2;
+}
 
-/* Clear of phone edges */
+/* Orbit around the phone column (right half on desktop) */
 .hero-floater-ai {
-  top: 2%;
-  left: -0.5rem;
+  top: 18%;
+  left: 52%;
   animation: hero-float-a 9s ease-in-out infinite;
 }
 .hero-floater-record {
-  top: 10%;
-  right: -0.5rem;
+  top: 28%;
+  left: 78%;
   animation: hero-float-b 10s ease-in-out infinite;
   animation-delay: -2.5s;
 }
 .hero-floater-insights {
-  bottom: 14%;
-  left: -0.75rem;
+  top: 58%;
+  left: 50%;
   animation: hero-float-c 11s ease-in-out infinite;
   animation-delay: -4s;
 }
 .hero-floater-expense {
-  bottom: 2%;
-  right: -0.5rem;
+  top: 68%;
+  left: 76%;
   animation: hero-float-d 9.5s ease-in-out infinite;
   animation-delay: -1.5s;
 }
 
-body.is-loaded .hero-floater-ai { transition-delay: 0.2s; }
-body.is-loaded .hero-floater-record { transition-delay: 0.3s; }
-body.is-loaded .hero-floater-insights { transition-delay: 0.4s; }
-body.is-loaded .hero-floater-expense { transition-delay: 0.5s; }
-
 @keyframes hero-float-a {
-  0% { transform: translate3d(-8px, 8px, 0); }
-  25% { transform: translate3d(18px, -22px, 0); }
-  50% { transform: translate3d(28px, 6px, 0); }
-  75% { transform: translate3d(4px, 20px, 0); }
-  100% { transform: translate3d(-8px, 8px, 0); }
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(20px, -28px, 0); }
+  50% { transform: translate3d(36px, 8px, 0); }
+  75% { transform: translate3d(8px, 24px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 @keyframes hero-float-b {
-  0% { transform: translate3d(10px, -6px, 0); }
-  25% { transform: translate3d(-20px, 12px, 0); }
-  50% { transform: translate3d(-28px, -16px, 0); }
-  75% { transform: translate3d(6px, -24px, 0); }
-  100% { transform: translate3d(10px, -6px, 0); }
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-24px, 16px, 0); }
+  50% { transform: translate3d(-36px, -20px, 0); }
+  75% { transform: translate3d(10px, -28px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 @keyframes hero-float-c {
-  0% { transform: translate3d(6px, -10px, 0); }
-  25% { transform: translate3d(22px, 14px, 0); }
-  50% { transform: translate3d(-12px, 22px, 0); }
-  75% { transform: translate3d(-24px, -4px, 0); }
-  100% { transform: translate3d(6px, -10px, 0); }
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(26px, 18px, 0); }
+  50% { transform: translate3d(-14px, 28px, 0); }
+  75% { transform: translate3d(-28px, -6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 @keyframes hero-float-d {
-  0% { transform: translate3d(-6px, 4px, 0); }
-  25% { transform: translate3d(16px, -18px, 0); }
-  50% { transform: translate3d(-18px, -26px, 0); }
-  75% { transform: translate3d(12px, 10px, 0); }
-  100% { transform: translate3d(-6px, 4px, 0); }
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(18px, -22px, 0); }
+  50% { transform: translate3d(-22px, -30px, 0); }
+  75% { transform: translate3d(14px, 12px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 @media (max-width: 959px) {
-  .hero-visual {
-    padding: 1.5rem 1.25rem !important;
-  }
-  .hero-floater {
-    gap: 0.35rem;
-    padding: 0.45rem 0.7rem 0.45rem 0.42rem;
-  }
-  .hero-floater-icon {
-    width: 1.55rem;
-    height: 1.55rem;
-  }
-  .hero-floater-label { font-size: 0.7rem; }
-  .hero-floater-ai { top: 0; left: 0; }
-  .hero-floater-record { top: 8%; right: 0; }
-  .hero-floater-insights { bottom: 12%; left: 0; }
-  .hero-floater-expense { bottom: 0; right: 0; }
-  body.is-loaded .hero-floater {
-    opacity: 1;
-  }
+  .hero-floater-ai { top: 8%; left: 4%; }
+  .hero-floater-record { top: 12%; left: auto; right: 4%; }
+  .hero-floater-insights { top: auto; bottom: 22%; left: 4%; }
+  .hero-floater-expense { top: auto; bottom: 16%; left: auto; right: 4%; }
 }
 
 @media (max-width: 480px) {
   .hero-floater-label { display: none; }
   .hero-floater {
-    padding: 0.4rem;
+    padding: 0.45rem;
     border-radius: 50%;
   }
 }
+
 
 .phone-frame {
   position: relative;
