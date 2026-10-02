@@ -1102,14 +1102,14 @@ h3 {
   font-family: var(--font);
   font-weight: 500;
 }
-.mock-tabs {
+ .mock-tabs {
   margin-top: auto;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   padding: 0.7rem 0.5rem 0.85rem;
   font-family: var(--font);
-  font-size: 0.55rem;
+  font-size: 0.62rem;
   font-weight: 500;
   color: var(--app-muted);
   text-align: center;
