@@ -156,12 +156,6 @@ strong { font-weight: 600; }
   object-fit: contain;
   flex-shrink: 0;
 }
-.brand-logo-full {
-  width: auto;
-  height: 3.5rem;
-  max-height: calc(var(--header-h) - 1.25rem);
-  max-width: min(11rem, 42vw);
-}
 .brand-text,
 .footer-brand-text {
   display: flex;
