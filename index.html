@@ -70,29 +70,96 @@
           <div class="hero-blob hero-blob-b"></div>
           <div class="hero-blob hero-blob-c"></div>
           <div class="phone-frame">
-            <div class="phone-screen">
-              <div class="mock-greeting">Hi Dev 👋</div>
+            <div class="phone-screen mock-insights">
+              <div class="mock-appbar">
+                <span class="mock-appbar-title">Insights</span>
+                <span class="mock-appbar-actions" aria-hidden="true">
+                  <span class="mock-icon-dot"></span>
+                  <span class="mock-icon-dot"></span>
+                </span>
+              </div>
 
-              <div class="mock-stats">
-                <div class="mock-stat">
-                  <b class="mock-stat-value">24</b>
-                  <span class="mock-stat-label">Documents</span>
+              <div class="mock-chips" aria-hidden="true">
+                <span class="mock-chip on">Family</span>
+                <span class="mock-chip">Dev</span>
+                <span class="mock-chip">Mom</span>
+              </div>
+
+              <div class="mock-quicklinks" aria-hidden="true">
+                <div class="mock-ql">
+                  <span class="mock-ql-icon mock-ql-teal"></span>
+                  <div>
+                    <b>Ask your records</b>
+                    <span>AI chat over your documents</span>
+                  </div>
                 </div>
-                <div class="mock-stat">
-                  <b class="mock-stat-value">4</b>
-                  <span class="mock-stat-label">Family</span>
+                <div class="mock-ql">
+                  <span class="mock-ql-icon mock-ql-red"></span>
+                  <div>
+                    <b>Emergency card</b>
+                    <span>ID + allergies + meds</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="mock-row">Upload record</div>
-              <div class="mock-row">Add family member</div>
-              <div class="mock-row mock-row-record">CBC · Mom · 12 Sep</div>
-              <div class="mock-row mock-row-record">Chest X-ray · Dev · 3 Aug</div>
+              <div class="mock-card mock-score" aria-hidden="true">
+                <div class="mock-card-head">
+                  <span class="mock-card-icon"></span>
+                  Health score
+                </div>
+                <div class="mock-score-body">
+                  <div class="mock-score-ring">
+                    <b>86</b>
+                    <span>/ 100</span>
+                  </div>
+                  <ul class="mock-score-factors">
+                    <li><span>HbA1c</span><em class="ok">In range</em></li>
+                    <li><span>LDL</span><em class="ok">In range</em></li>
+                    <li><span>BP</span><em class="warn">Watch</em></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mock-card mock-lab-trends">
+                <div class="mock-card-head">
+                  <span class="mock-card-icon mock-card-icon-chart"></span>
+                  Lab trends
+                  <span class="mock-count">3</span>
+                </div>
+                <div class="mock-metric">
+                  <div class="mock-metric-top">
+                    <div>
+                      <div class="mock-metric-name">HbA1c</div>
+                      <div class="mock-metric-meta">Latest Sep 12, 2026 · ref 4–5.6 % · 5 readings</div>
+                    </div>
+                    <div class="mock-metric-right">
+                      <div class="mock-metric-value">5.4 <span>%</span></div>
+                      <span class="mock-badge ok">in range</span>
+                    </div>
+                  </div>
+                  <svg class="mock-chart" viewBox="0 0 220 100" role="img" aria-label="HbA1c trend chart">
+                    <text x="2" y="18" class="mock-chart-axis">5.8</text>
+                    <text x="2" y="52" class="mock-chart-axis">5.4</text>
+                    <text x="2" y="86" class="mock-chart-axis">5.0</text>
+                    <polyline class="mock-chart-line" fill="none" points="36,28 72,42 108,48 144,68 180,52" />
+                    <circle class="mock-chart-dot" cx="36" cy="28" r="3.5" />
+                    <circle class="mock-chart-dot" cx="72" cy="42" r="3.5" />
+                    <circle class="mock-chart-dot" cx="108" cy="48" r="3.5" />
+                    <circle class="mock-chart-dot" cx="144" cy="68" r="3.5" />
+                    <circle class="mock-chart-dot" cx="180" cy="52" r="3.5" />
+                    <text x="28" y="98" class="mock-chart-label">Jan</text>
+                    <text x="64" y="98" class="mock-chart-label">Mar</text>
+                    <text x="100" y="98" class="mock-chart-label">May</text>
+                    <text x="136" y="98" class="mock-chart-label">Jul</text>
+                    <text x="172" y="98" class="mock-chart-label">Sep</text>
+                  </svg>
+                </div>
+              </div>
 
               <nav class="mock-tabs">
-                <span class="on">Home</span>
+                <span>Home</span>
                 <span>Records</span>
-                <span>Insights</span>
+                <span class="on">Insights</span>
                 <span>Remind</span>
                 <span>Card</span>
                 <span>More</span>
