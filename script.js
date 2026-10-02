@@ -73,18 +73,21 @@
   });
 
   // Soft page-load entrance (hero fade/slide + pattern)
+  // Use DOMContentLoaded so floaters appear even if demo videos delay window.load
   function markLoaded() {
     document.body.classList.add("is-loaded");
   }
   if (reduceMotion) {
     markLoaded();
-  } else if (document.readyState === "complete") {
-    requestAnimationFrame(markLoaded);
-  } else {
-    window.addEventListener("load", function () {
+  } else if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
       requestAnimationFrame(markLoaded);
     });
+  } else {
+    requestAnimationFrame(markLoaded);
   }
+  // Safety: ensure loaded class even if something blocked earlier
+  window.setTimeout(markLoaded, 1200);
 
   // Staggered scroll reveals for cards / sections
   var reveals = document.querySelectorAll(".reveal");
