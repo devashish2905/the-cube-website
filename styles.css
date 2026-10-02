@@ -72,6 +72,11 @@ html {
     transform: none !important;
     filter: none !important;
   }
+  .hero-floater {
+    animation: none !important;
+    opacity: 0.42 !important;
+    transform: none !important;
+  }
 }
 
 body {
@@ -650,9 +655,145 @@ h3 {
   top: 42%;
   left: 18%;
 }
+
+/* Soft floating theme objects around the phone mock */
+.hero-floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.hero-floater {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.7rem 0.42rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(13, 148, 136, 0.14);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.06),
+    0 1px 2px rgba(13, 148, 136, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--teal-800);
+  opacity: 0;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+body.is-loaded .hero-floater {
+  opacity: 0.55;
+  transition: opacity 1s var(--ease);
+}
+.hero-floater-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.hero-floater-icon svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+.hero-floater-icon-rupee {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.hero-floater-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Positions — sit around the phone, away from left copy */
+.hero-floater-ai {
+  top: 6%;
+  left: 2%;
+  animation: hero-float-a 11s ease-in-out infinite;
+}
+.hero-floater-record {
+  top: 18%;
+  right: -2%;
+  animation: hero-float-b 13s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
+.hero-floater-insights {
+  bottom: 16%;
+  left: -4%;
+  animation: hero-float-c 12s ease-in-out infinite;
+  animation-delay: -4s;
+}
+.hero-floater-expense {
+  bottom: 8%;
+  right: 0;
+  animation: hero-float-d 14s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+body.is-loaded .hero-floater-ai { transition-delay: 0.45s; }
+body.is-loaded .hero-floater-record { transition-delay: 0.55s; }
+body.is-loaded .hero-floater-insights { transition-delay: 0.65s; }
+body.is-loaded .hero-floater-expense { transition-delay: 0.75s; }
+
+@keyframes hero-float-a {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(6px, -10px, 0); }
+}
+@keyframes hero-float-b {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-8px, 8px, 0); }
+}
+@keyframes hero-float-c {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(8px, -6px, 0); }
+}
+@keyframes hero-float-d {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-5px, -9px, 0); }
+}
+
+@media (max-width: 959px) {
+  .hero-floater {
+    gap: 0.32rem;
+    padding: 0.36rem 0.58rem 0.36rem 0.38rem;
+  }
+  .hero-floater-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .hero-floater-label { font-size: 0.62rem; }
+  .hero-floater-ai { top: 2%; left: 0; }
+  .hero-floater-record { top: 10%; right: 0; }
+  .hero-floater-insights { bottom: 10%; left: 0; }
+  .hero-floater-expense { bottom: 2%; right: 2%; }
+  body.is-loaded .hero-floater {
+    opacity: 0.42;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-floater-label { display: none; }
+  .hero-floater {
+    padding: 0.4rem;
+    border-radius: 50%;
+  }
+}
+
 .phone-frame {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(100%, 260px);
   background: #111;
   border-radius: 2.25rem;
