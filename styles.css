@@ -1226,19 +1226,9 @@ h3 {
   box-shadow: var(--shadow-sm);
   position: relative;
 }
-.how-flow-num {
-  position: absolute;
-  top: 0.7rem;
-  left: 0.85rem;
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  line-height: 1;
-  color: var(--primary);
-  opacity: 0.95;
-}
 .how-flow-title {
   margin: 0;
-  padding-left: 1.55rem;
+  padding-left: 0;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: -0.01em;
