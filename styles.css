@@ -725,27 +725,31 @@ h3 {
   line-height: 1.2;
 }
 
-/* Orbit around the phone column (right half on desktop) */
+/* Orbit the phone mock (positions are inside .hero-visual) */
 .hero-floater-ai {
-  top: 18%;
-  left: 52%;
+  top: 10%;
+  left: 0;
   animation: hero-float-a 9s ease-in-out infinite;
 }
 .hero-floater-record {
-  top: 28%;
-  left: 78%;
+  top: 18%;
+  right: 0;
+  left: auto;
   animation: hero-float-b 10s ease-in-out infinite;
   animation-delay: -2.5s;
 }
 .hero-floater-insights {
-  top: 58%;
-  left: 50%;
+  bottom: 18%;
+  top: auto;
+  left: 0;
   animation: hero-float-c 11s ease-in-out infinite;
   animation-delay: -4s;
 }
 .hero-floater-expense {
-  top: 68%;
-  left: 76%;
+  bottom: 10%;
+  top: auto;
+  right: 0;
+  left: auto;
   animation: hero-float-d 9.5s ease-in-out infinite;
   animation-delay: -1.5s;
 }
@@ -780,10 +784,11 @@ h3 {
 }
 
 @media (max-width: 959px) {
-  .hero-floater-ai { top: 8%; left: 4%; }
-  .hero-floater-record { top: 12%; left: auto; right: 4%; }
-  .hero-floater-insights { top: auto; bottom: 22%; left: 4%; }
-  .hero-floater-expense { top: auto; bottom: 16%; left: auto; right: 4%; }
+  .hero-visual { overflow: visible; }
+  .hero-floater-ai { top: 6%; left: 0; }
+  .hero-floater-record { top: 14%; left: auto; right: 0; }
+  .hero-floater-insights { top: auto; bottom: 22%; left: 0; }
+  .hero-floater-expense { top: auto; bottom: 12%; left: auto; right: 0; }
 }
 
 @media (max-width: 480px) {
