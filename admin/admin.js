@@ -48,6 +48,30 @@ function toast(msg) {
   }, 3200);
 }
 
+
+/** Best-effort message from supabase.functions.invoke failure. */
+function edgeErrorMessage(error, data, fallback) {
+  if (data && typeof data === "object" && data.error) return String(data.error);
+  if (error && error.context) {
+    try {
+      // FunctionsHttpError sometimes exposes Response as context
+      const ctx = error.context;
+      if (typeof ctx === "object" && typeof ctx.json === "function") {
+        // can't await here; fall through
+      }
+    } catch (_) {}
+  }
+  const m = (error && (error.message || String(error))) || "";
+  if (/Failed to send a request|FunctionsFetchError|Failed to fetch/i.test(m)) {
+    return fallback;
+  }
+  if (/non-2xx|FunctionsHttpError/i.test(m)) {
+    return fallback;
+  }
+  return m || fallback;
+}
+
+
 function setBadge(id, state) {
   const el = $(id);
   if (!el) return;
@@ -175,7 +199,8 @@ async function loadOverview() {
     if (error || !data || typeof data !== "object" || data.error) {
       caps.overview = "unavailable";
       note.textContent =
-        "Account overview edge function isn't live yet. Metric cards stay at zero until admin-overview is deployed.";
+        "Could not load account overview. " +
+        edgeErrorMessage(error, data, "Sign in as admin and try Refresh.");
       note.hidden = false;
       $("users-empty").hidden = false;
       $("users-empty").textContent = "No accounts to show.";
@@ -228,10 +253,11 @@ async function loadOverview() {
       $("users-list").appendChild(frag);
     }
     caps.overview = "live";
-  } catch (_) {
+  } catch (e) {
     caps.overview = "unavailable";
     note.textContent =
-      "Account overview edge function isn't live yet. Metric cards stay at zero until admin-overview is deployed.";
+      "Could not load account overview. " +
+      edgeErrorMessage(e, null, "Sign in as admin and try Refresh.");
     note.hidden = false;
     $("users-empty").hidden = false;
     $("users-empty").textContent = "No accounts to show.";
@@ -374,9 +400,10 @@ async function sendReply(body) {
     );
     await loadTickets();
   } catch (e) {
-    $("reply-error").textContent =
-      e.message ||
-      "Could not send reply. The reply RPC may not be deployed yet.";
+    const detail =
+      (e && (e.message || e.details || e.hint)) ||
+      "Could not send reply.";
+    $("reply-error").textContent = String(detail);
     $("reply-error").hidden = false;
   } finally {
     $("reply-send").disabled = false;
@@ -488,7 +515,9 @@ async function loadCoupons() {
       caps.coupons = "unavailable";
       couponsLive = false;
       $("coupon-form").hidden = true;
-      $("coupons-note").textContent = "Partner coupons aren't available yet.";
+      $("coupons-note").textContent =
+        "Could not load partner coupons. " +
+        edgeErrorMessage(error, data, "Sign in as admin and try Refresh.");
       $("coupons-note").hidden = false;
       updateCapsUI();
       return;
@@ -520,12 +549,14 @@ async function loadCoupons() {
         redemptions: Number(e.redemptions ?? 0),
       }))
     );
-  } catch (_) {
+  } catch (e) {
     $("coupons-loading").hidden = true;
     caps.coupons = "unavailable";
     couponsLive = false;
     $("coupon-form").hidden = true;
-    $("coupons-note").textContent = "Partner coupons aren't available yet.";
+    $("coupons-note").textContent =
+      "Could not load partner coupons. " +
+      edgeErrorMessage(e, null, "Sign in as admin and try Refresh.");
     $("coupons-note").hidden = false;
   }
   updateCapsUI();
@@ -536,8 +567,12 @@ async function createCoupon(payload) {
     "admin-create-coupon",
     { body: payload }
   );
-  if (error) throw error;
-  if (data && data.error) throw new Error(data.error);
+  if (data && data.error) throw new Error(String(data.error));
+  if (error) {
+    throw new Error(
+      edgeErrorMessage(error, data, error.message || "Could not create coupon.")
+    );
+  }
   return data;
 }
 
