@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0d9488" />
+  <meta name="description" content="Private administration console for The Cube." />
+  <title>Administration | The Cube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="icon" type="image/png" href="../assets/the-cube-logo-transparent.png" />
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Login -->
+    <section id="view-login" class="view view-login" hidden>
+      <div class="login-card">
+        <div class="login-brand">
+          <img src="../assets/the-cube-mark.png" alt="" width="48" height="48" />
+          <div>
+            <p class="login-kicker">THE CUBE</p>
+            <h1>Administration</h1>
+          </div>
+        </div>
+        <p class="login-lede">Sign in with an admin account to review users, support tickets, and partner coupons.</p>
+        <form id="login-form" class="login-form" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input id="login-email" type="email" autocomplete="username" required placeholder="you@example.com" />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input id="login-password" type="password" autocomplete="current-password" required placeholder="••••••••" />
+          </label>
+          <p id="login-error" class="error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary" id="login-submit">Sign in</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Access denied -->
+    <section id="view-denied" class="view view-denied" hidden>
+      <div class="denied-card">
+        <h1>You don't have access to this page.</h1>
+        <p>This console is only available to administrators.</p>
+        <button type="button" class="btn btn-outline" id="denied-signout">Sign out</button>
+      </div>
+    </section>
+
+    <!-- Console -->
+    <section id="view-console" class="view view-console" hidden>
+      <header class="console-header">
+        <div class="console-brand">
+          <img src="../assets/the-cube-mark.png" alt="" width="36" height="36" />
+          <div>
+            <p class="login-kicker">THE CUBE</p>
+            <h1>Administration</h1>
+          </div>
+        </div>
+        <div class="console-actions">
+          <button type="button" class="btn btn-ghost" id="btn-refresh" title="Refresh">Refresh</button>
+          <button type="button" class="btn btn-outline" id="btn-signout">Sign out</button>
+        </div>
+      </header>
+
+      <main class="console-main">
+        <!-- Capabilities -->
+        <section class="panel caps-panel" aria-label="Admin capabilities">
+          <h2 class="panel-title">Admin capabilities</h2>
+          <ul id="caps-list" class="caps-list">
+            <li data-cap="overview"><span>Account overview</span><span class="badge badge-pending" id="cap-overview">…</span></li>
+            <li data-cap="tickets"><span>Support tickets + in-app reply</span><span class="badge badge-pending" id="cap-tickets">…</span></li>
+            <li data-cap="coupons"><span>Partner coupons create/toggle</span><span class="badge badge-pending" id="cap-coupons">…</span></li>
+            <li data-cap="role"><span>Role gate (admin)</span><span class="badge badge-live" id="cap-role">Live</span></li>
+          </ul>
+        </section>
+
+        <!-- Account overview -->
+        <section class="panel" aria-labelledby="overview-heading">
+          <h2 id="overview-heading" class="panel-title">Account overview</h2>
+          <div class="metrics" id="metrics">
+            <div class="metric"><span class="metric-label">Users</span><span class="metric-value" id="metric-users">0</span></div>
+            <div class="metric"><span class="metric-label">Subscribers</span><span class="metric-value" id="metric-subscribers">0</span></div>
+            <div class="metric"><span class="metric-label">Active plans</span><span class="metric-value" id="metric-plans">0</span></div>
+          </div>
+          <p id="overview-note" class="note" hidden></p>
+        </section>
+
+        <!-- Support tickets -->
+        <section class="panel" aria-labelledby="tickets-heading">
+          <h2 id="tickets-heading" class="panel-title">Support tickets</h2>
+          <p class="panel-hint">Queries from Help &amp; Support. Replies go to the user as an in-app message via Help &amp; Support → View Messages.</p>
+          <div id="tickets-loading" class="loading" hidden>Loading tickets…</div>
+          <p id="tickets-error" class="error" hidden></p>
+          <p id="tickets-empty" class="empty" hidden>No support tickets yet. When users submit Help, they appear here.</p>
+          <div id="tickets-list" class="ticket-list"></div>
+        </section>
+
+        <!-- Partner coupons -->
+        <section class="panel" aria-labelledby="coupons-heading">
+          <h2 id="coupons-heading" class="panel-title">Partner coupons</h2>
+          <p id="coupons-note" class="note" hidden></p>
+          <form id="coupon-form" class="coupon-form" hidden>
+            <h3 class="sub-title">Create code</h3>
+            <div class="form-grid">
+              <label class="field">
+                <span>Organization or contact</span>
+                <input id="coupon-partner" type="text" minlength="2" maxlength="120" required placeholder="e.g. City Care Hospital" />
+              </label>
+              <label class="field">
+                <span>Partner type</span>
+                <select id="coupon-category" required>
+                  <option value="doctor">Doctor</option>
+                  <option value="druggist">Druggist</option>
+                  <option value="hospital">Hospital</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Coupon code</span>
+                <input id="coupon-code" type="text" minlength="3" maxlength="32" required placeholder="e.g. CITYCARE10" style="text-transform: uppercase" />
+              </label>
+              <label class="field">
+                <span>Annual discount (%)</span>
+                <input id="coupon-discount" type="number" min="1" max="100" step="1" value="10" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <p class="panel-hint">Annual plans only · each customer can use a code once</p>
+              <button type="submit" class="btn btn-primary" id="coupon-submit">Create code</button>
+            </div>
+            <p id="coupon-form-error" class="error" hidden></p>
+          </form>
+          <div id="coupons-loading" class="loading" hidden>Loading coupons…</div>
+          <p id="coupons-empty" class="empty" hidden>No coupons yet.</p>
+          <div id="coupons-list" class="coupon-list"></div>
+        </section>
+
+        <!-- Users list -->
+        <section class="panel" aria-labelledby="users-heading">
+          <h2 id="users-heading" class="panel-title">Users</h2>
+          <p id="users-empty" class="empty" hidden>No accounts to show.</p>
+          <div id="users-list" class="user-list"></div>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <!-- Reply dialog -->
+  <dialog id="reply-dialog" class="reply-dialog">
+    <form method="dialog" id="reply-form" class="reply-form">
+      <header class="reply-header">
+        <h2 id="reply-title">Reply</h2>
+        <button type="button" class="btn btn-ghost btn-icon" id="reply-close" aria-label="Close">×</button>
+      </header>
+      <p id="reply-original" class="reply-original"></p>
+      <label class="field">
+        <span>Your reply (sent in-app to the user)</span>
+        <textarea id="reply-body" rows="4" required minlength="2" placeholder="Write a helpful reply…"></textarea>
+      </label>
+      <p id="reply-error" class="error" hidden></p>
+      <div class="form-row end">
+        <button type="button" class="btn btn-outline" id="reply-cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="reply-send">Send reply</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" hidden role="status"></div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

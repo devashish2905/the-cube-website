@@ -93,3 +93,10 @@ Edit files in this repo, push to `main`. Pages rebuilds automatically. No build 
 ## Ownership
 
 Website deploy stream: Grok Bot (primary), with Learning owning MediVault/Cube product. DNS changes on GoDaddy need Dev (or a signed-in GoDaddy session).
+
+## Private admin
+
+- **URL:** https://thecubelife.in/admin/ (also served from the github.io Pages URL under `/admin/`)
+- **Do not link** this path from the public homepage, nav, footer, privacy, terms, or disclaimer. It is intentionally unlisted; `robots.txt` disallows `/admin/`.
+- **Sign-in:** email + password with a Supabase Auth account that has `profiles.role = admin` or a legacy `user_roles` row with `role = admin` (independent of subscription). The anon key is embedded only in `admin/admin.js` (same public JWT as the Flutter app).
+- **Backend:** live calls against the cubeoflife Supabase project with the signed-in admin JWT. Account overview needs the `admin-overview` edge function; partner coupon list/create/toggle need `admin-coupons`, `admin-create-coupon`, and `admin-set-coupon-active`. Support tickets read `support_tickets` and reply via RPC `admin_reply_support_ticket`. When an edge function is not deployed, the console shows an honest empty/unavailable state — it does not invent data.
