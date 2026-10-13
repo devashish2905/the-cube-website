@@ -1927,3 +1927,6 @@ body.is-loaded .hero-pattern {
 .how-flow-logo { width: auto; height: 3.5rem; }
 .cta-logo { width: auto; height: 72px; background: #fff; border-radius: 18px; padding: 10px 12px; box-sizing: content-box; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); display: block; }
 @media (max-width: 480px) { .brand-logo { height: 44px; } .footer-logo { height: 44px; } }
+/* Inverse logo on dark sections (2026-10-13b) */
+.footer-logo { background: none; padding: 0; border-radius: 0; }
+.cta-logo { background: none; padding: 0; border-radius: 0; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18)); }
