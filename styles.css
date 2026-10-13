@@ -1920,3 +1920,10 @@ body.is-loaded .hero-pattern {
   color: var(--teal-800) !important;
   font-weight: 700;
 }
+
+/* New logo (2026-10-13) */
+.brand-logo { width: auto; height: 56px; max-width: 60vw; }
+.footer-logo { width: auto; height: 52px; opacity: 1; filter: none; background: #fff; border-radius: 12px; padding: 8px 14px; box-sizing: content-box; }
+.how-flow-logo { width: auto; height: 3.5rem; }
+.cta-logo { width: auto; height: 72px; background: #fff; border-radius: 18px; padding: 10px 12px; box-sizing: content-box; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); display: block; }
+@media (max-width: 480px) { .brand-logo { height: 44px; } .footer-logo { height: 44px; } }
